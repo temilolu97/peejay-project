@@ -1,0 +1,93 @@
+.sneaker {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    color: hsl(26, 100%, 55%);
+    letter-spacing: 3px;   
+}
+.limited {
+    margin-top: 15px;
+    font-family:  'Kumbh Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    width: 80%;
+}
+
+.profile {
+    margin-top: 15px;
+    font-family:  'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    width: 70%;
+    line-height: 1.8;
+    color: hsl(219, 9%, 45%);
+}
+.six {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 15px;
+}
+.best {
+    font-size: 18px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.besty {
+    height: 15px;
+    width: 7%;
+    font-size: 10px;
+    font-weight: 700;
+    color: hsl(26, 100%, 55%);
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.yonda {
+    margin-top: 5px;
+    font-size: 10px;
+    color: hsl(219, 9%, 45%);
+}
+
+.sixth_cont {
+    /* border: 2px solid green; */
+    /* width: 50%; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-top: 20px;
+}
+
+.spaces {
+    height: 20px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jokes {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 15px 45px;
+    height: 20px;
+    background-color: hsl(26, 100%, 55%);
+    color: hsl(0, 0%, 100%);
+}
+
+.joker {
+    width: 18%;
+}
+
+.joked {
+    margin-left: 5px;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+}
