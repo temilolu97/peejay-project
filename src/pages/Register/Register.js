@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import toast, { Toaster } from "react-hot-toast"
 import { Link, useNavigate } from "react-router-dom"
 import RegisterIllustrator2 from '../../PNG/loginIllustrator.png'
 
@@ -10,10 +11,15 @@ const Register =()=>{
     const [password, setPassword] = useState('password')
     let user;
     const navigate= useNavigate();
-    const handleSubmit= async(e)=>{
+    const handleSubmit= (e)=>{
         e.preventDefault()
-        const response = await axios.post('https://localhost:44381/api/Users/register',{firstName,lastName, email, password})
-        console.log(response)
+        axios.post('https://localhost:44381/api/Users/register',{firstName,lastName, email, password}).then(response=>{
+          console.log(response.data)
+          toast.success(response.data)
+        }).catch(error=>{
+          toast.error('An acoount with this email already exists')
+        })
+        
     }
     return(
         <section className="mt-4" style={{backgroundColor: "#eee"}}>
@@ -77,6 +83,7 @@ const Register =()=>{
             </div>
           </div>
         </div>
+        <Toaster/>
       </section>
     )
 }

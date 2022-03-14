@@ -19,6 +19,7 @@ import AllProducts from './pages/Admin/AllProducts';
 import AllCategeories from './pages/Admin/AllCategories';
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
+import SearchResult from './pages/SearchResult/SearchResult';
 
 function App() {
   const [categories, setCategories] = useState([])
@@ -55,6 +56,7 @@ function App() {
           <Route path='/register' element={<Register/>}/>
           <Route path='/contact-us' element={<Contact/>}/>
           <Route path='/about' element={<About/>}/>
+          <Route path='/search-result' element={<SearchResult/>}/>
           <Route element={<ProtectedRoutes/>}>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/dashboard' element={<AllCategeories/>}/>

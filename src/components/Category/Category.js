@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 import styles from './Category.module.css'
 import ProductItem from "../ProductItem/ProductItem";
+import Carousel from 'nuka-carousel'
 const Category =({categories, addToCart})=>{
     const[products, setProducts]= useState([])
     const getProducts=async()=>{
@@ -25,9 +26,12 @@ const Category =({categories, addToCart})=>{
                     <h3 className={styles.category_heading}>{category.name}</h3>
                     <hr/>
                     <div className="row">
+                        
                         {products.filter((product)=>category.id === product.categoryId).map(product=>(
                             <ProductItem product={product} price={product.price} category={category.name} image={product.imageUrl} name={product.name} productId={product.id} addToCart={addToCart}/>
+                            
                         ))}
+                    
                     </div>
                 </div>
             ))}
@@ -35,3 +39,4 @@ const Category =({categories, addToCart})=>{
     )
 }
 export default Category;
+

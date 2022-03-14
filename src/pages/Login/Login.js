@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types'
 import RegisterIllustrator from '../../PNG/RegisterIllustrator.png'
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const Login =({setToken})=>{
@@ -11,18 +11,23 @@ const Login =({setToken})=>{
     const [password, setPassword] = useState('')
     let user;
     const navigate= useNavigate();
-    const handleSubmit= async(e)=>{
+
+    const handleSubmit= (e)=>{
         e.preventDefault()
-        const response = await axios.post('https://localhost:44381/api/Users/login',{email, password})
-        user = response.data
-        localStorage.setItem('user',JSON.stringify(user))
-        if(user.role =="1"){
-          toast.success('Successfully logged in')
-          navigate('/dashboard')
-        }else{
-          toast.success('Successfully logged in')
-          navigate('/')
-        }
+        axios.post('https://localhost:44381/api/Users/login',{email, password}).then(response=>{
+          user = response.data
+          localStorage.setItem('user',JSON.stringify(user))
+          if(user.role =="1"){
+            toast.success('Successfully logged in')
+            navigate('/dashboard')
+          }else{
+            toast.success('Successfully logged in')
+            navigate('/')
+          }
+        }).catch(error=>{
+          toast.error('Unable to login. Please check your details and try again')
+        })
+        
     }
     return(
         <section class=" mt-4" style={{backgroundColor: "#eee"}}>
@@ -77,6 +82,7 @@ const Login =({setToken})=>{
       </div>
     </div>
   </div>
+  <Toaster/>
 </section>
     )
 }
